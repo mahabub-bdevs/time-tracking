@@ -29,8 +29,9 @@ class _DashBordViewState extends State<DashBordView> {
               children: [
                 Padding(
                   padding: EdgeInsets.only(
-                    left: getWidth(20),
-                    right: getWidth(20),
+                    top: getHeight(10),
+                    left: getWidth(15),
+                    right: getWidth(15),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -42,7 +43,10 @@ class _DashBordViewState extends State<DashBordView> {
                         color: AppColors.elevatedSurfaceLight,
                         fontFamily: AppFont.inter,
                       ),
-                      containerDesigner(imagePath: ImagePath.notificationIcon),
+                      containerDesigner(
+                        imagePath: ImagePath.notificationIcon,
+                        contain: true,
+                      ),
                     ],
                   ),
                 ),
@@ -166,7 +170,7 @@ class _DashBordViewState extends State<DashBordView> {
     );
   }
 
-  Widget containerDesigner({String? imagePath}) {
+  Widget containerDesigner({String? imagePath, bool? contain}) {
     return Container(
       height: getHeight(48),
       width: getWidth(48),
@@ -181,11 +185,31 @@ class _DashBordViewState extends State<DashBordView> {
         ),
       ),
       child: Center(
-        child: Image.asset(
-          imagePath ?? ImagePath.manuIcon,
-          height: getHeight(24),
-          width: getWidth(24),
-        ),
+        child: contain == null
+            ? Image.asset(
+                imagePath ?? ImagePath.manuIcon,
+                height: getHeight(24),
+                width: getWidth(24),
+              )
+            : Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Image.asset(
+                    imagePath ?? ImagePath.manuIcon,
+                    height: getHeight(24),
+                    width: getWidth(24),
+                  ),
+                  Container(
+                    height: getHeight(7),
+                    width: getWidth(7),
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: AppColors.errorDark,
+                    ),
+                  ),
+                ],
+              ),
       ),
     );
   }
