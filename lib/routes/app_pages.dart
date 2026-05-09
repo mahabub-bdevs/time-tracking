@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 import '../features/auth/login/view/forget_screens.dart';
 import '../features/auth/login/view/reset_password_view.dart';
+import '../features/dashbord/bindding/desh_bord_binding.dart';
+import '../features/dashbord/view/dash_bord_view.dart';
 import '../features/home/binding/home_binding.dart';
 import '../features/home/view/home_screens.dart';
 import '../features/profile/binding/profile_binding.dart';
@@ -43,6 +45,11 @@ class AppPages {
       name: AppRoutes.resetPassword,
       page: () => const ResetPasswordView(),
       binding: LoginBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.dashBordView,
+      page: () => const DashBordView(),
+      binding: DashBordBindding(),
     ),
   ];
 }

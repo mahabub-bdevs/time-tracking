@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 
 import '../../../core/core.dart';
 import '../../../core/utils/app_images.dart';
+import '../../../routes/app_routes.dart';
 import '../../auth/login/controller/logout_controller.dart';
 import '../controller/change_password.dart';
 import '../controller/change_profile_controller.dart';
@@ -603,6 +604,17 @@ class ProfileView extends StatelessWidget {
                                           textColor:
                                               AppColors.elevatedSurfaceLight,
                                         ),
+                                  SizedBox(height:getHeight(10),),
+                                  CustomButton(
+                                    text: "Dash Board",
+                                    onPressed: () {
+                                      Get.toNamed(AppRoutes.dashBordView);
+                                    },
+                                    color: AppColors.primaryLight.withValues(
+                                      alpha: 0.4,
+                                    ),
+                                    textColor: AppColors.elevatedSurfaceLight,
+                                  ),
                                 ],
                               ),
                             ),

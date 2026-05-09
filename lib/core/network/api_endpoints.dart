@@ -21,4 +21,7 @@ class ApiEndpoints {
   static String get profileDeteles => '$baseUrl/profile-details';
   static String get profilePhotoChange => '$baseUrl/profile-picture';
   static String get coverPhoto => '$baseUrl/cover-picture';
+
+  // Desh Bord Screens
+  static String get deshBordUrl => "$baseUrl/dashboard-widgets";
 }
